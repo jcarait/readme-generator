@@ -1,9 +1,21 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const generateREADME = ({ title }) =>
-  `# ${title}`;
+//Variable is populated with answers from Inquirer
+const generateREADME = ({ title, description, installation, usage }) =>
+`# ${title}
 
+${description}
+
+## Installation Instructions: 
+
+${installation}
+
+## Usage Information: 
+
+${usage}`;
+
+//Inquirer prompts user via command-line interface
 inquirer
   .prompt([
     {
@@ -26,11 +38,17 @@ inquirer
       name: 'usage',
       message: 'How do you use your application?'
     },
+    {
+      type: 'list',
+      message: 'How would you like to licence your project?',
+      name: 'license',
+      choices: ['Apache 2.0', 'MIT', 'GNU GPLv3', 'Boost 1.0', 'Unlicense']
+    }
   ])
   .then((answers) => {
     const readmeContent = generateREADME(answers);
 
-    fs.writeFile('README.md', readmeContent, (err) =>
+    fs.writeFile('../README.md', readmeContent, (err) =>
       err ? console.log(err) : console.log('Successfully created README!')
     );
   });
