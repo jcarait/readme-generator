@@ -1,8 +1,9 @@
-# test [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+# README-generator
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
 
-asdfadsf
+A good and quick README generator using command-line interface.
 
 ## Table of contents
 
@@ -10,27 +11,33 @@ asdfadsf
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
-- [Contribute]](#How to contribute)
+- [Contribute](#Contribute)
 - [Tests](#Tests)
 - [Questions](#Questions)
 
 ## Installation Instructions
 
-sadfasfdsaf
+-npm i
 
 ## Usage Information:
 
-asdf
+-node main
 
 ## License
 
-Apache 2.0
+This project is available under the MIT license. Visit [License: MIT](https://opensource.org/licenses/MIT) for full license text
 
-## How to contribute
-sdafasfdas
+## Contribute
+
+Fork or pull request
 
 ## Tests
-asdfasdfsa
+
+N/A
 
 ### Questions
-dafsdsafas
+
+
+
+Git profile: https://github.com/jcarait
+Email: jonocdev@gmail.com

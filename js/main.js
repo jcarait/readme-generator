@@ -54,13 +54,13 @@ function promptUser() {
     },
     {
       type: 'input',
-      name: 'questions',
-      message: 'Provide instructions on how to reach you with additional questions.'
+      name: 'email',
+      message: 'Enter your email (use a developer email if you do not wish to use your private email).'
     },
     {
       type: 'input',
-      name: 'email',
-      message: 'Enter your email.'
+      name: 'questions',
+      message: 'Provide instructions on how to reach you with additional questions. If you have previously entered your Github username and email, they will be included in the questions section.'
     },
   ]);
 }
@@ -68,10 +68,9 @@ function promptUser() {
 const init = () => {
   promptUser()
   .then((answers) => {
-    console.log(answers);
     const readmeContents = markdown(answers);
 
-    fs.writeFile('../README.md', readmeContents)
+    fs.writeFileSync('../README.md', markdown(answers));
   })
   .then(() => console.log('Successfully wrote to README.md'))
   .catch((err) => console.error(err));

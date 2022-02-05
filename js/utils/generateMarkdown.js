@@ -25,7 +25,7 @@ function renderLicenseLink(license) {
 
   switch (license) {
     case 'Apache 2.0':
-      return '[[License: Apache 2.0](https://opensource.org/licenses/Apache-2.0)';
+      return '[License: Apache 2.0](https://opensource.org/licenses/Apache-2.0)';
     case 'MIT':
       return ('[License: MIT](https://opensource.org/licenses/MIT)');
     case 'GNU GPLv3':
@@ -73,7 +73,7 @@ ${data.description}
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
-- [Contribute](#How to contribute)
+- [Contribute](#Contribute)
 - [Tests](#Tests)
 - [Questions](#Questions)
 
@@ -89,7 +89,7 @@ ${data.usage}
 
 ${licenseSection}
 
-## How to contribute
+## Contribute
 
 ${data.contribute}
 
@@ -101,7 +101,7 @@ ${data.tests}
 
 ${data.questions}
 
-Git profile: https://github.com/${data.username}
+Git profile: https://github.com/${data.user}
 Email: ${data.email}`;
 };
 
