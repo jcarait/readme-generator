@@ -1,5 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const utils = require('./utils/generateMarkdown');
 
 //Inquirer prompts for information about application repository to be included in README
 
@@ -50,7 +51,9 @@ ${usage}`;
 
 const init = () => {
   promptUser()
-  .then((answers) => fs.writeFileSync('../README.md', generateREADME(answers)))
+  .then((answers) => fs.writeFileSync('../README.md', utils.generateMarkdown(answers)))
   .then(() => console.log('Successfully wrote to README.md'))
   .catch((err) => console.error(err));
 };
+
+init();
