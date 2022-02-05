@@ -55,7 +55,12 @@ function promptUser() {
     {
       type: 'input',
       name: 'questions',
-      message: 'Provide instructions on how to reach you with additional questions'
+      message: 'Provide instructions on how to reach you with additional questions.'
+    },
+    {
+      type: 'input',
+      name: 'email',
+      message: 'Enter your email.'
     },
   ]);
 }

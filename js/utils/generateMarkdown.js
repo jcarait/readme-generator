@@ -48,6 +48,8 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
 
+  fs.readFile(``)
+
 }
 
 // TODO: Create a function to generate markdown for README
