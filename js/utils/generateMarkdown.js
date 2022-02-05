@@ -43,9 +43,12 @@ function renderLicenseLink(license) {
 
 
 function renderLicenseSection(license) {
-
-   return `This project is available under the MIT license. Visit ${license} for full license text`
-  
+  const licenseLink = renderLicenseLink(license)
+  if (!license) {
+    return ""
+  } else {
+   return `This project is available under the MIT license. Visit ${licenseLink} for full license text`
+  }
 };
 
 
@@ -55,8 +58,7 @@ renderLicenseSection('MIT');
 function generateMarkdown(data) {
 
 const licenseBadge = renderLicenseBadge(data.license);
-const licenselink = renderLicenseLink(data.license);
-const licenseText = renderLicenseSection(data.license);
+const licenseSection = renderLicenseSection(data.license)
   
   return `# ${data.title}
   ${licenseBadge}
@@ -85,7 +87,7 @@ ${data.usage}
 
 ## License
 
-${data.license}
+${licenseSection}
 
 ## How to contribute
 
