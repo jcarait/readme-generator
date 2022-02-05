@@ -1,8 +1,11 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const markdown = require('./utils/generateMarkdown');
+const util = require('util')
 
 //Inquirer prompts for information about application repository to be included in README
+
+const writeToFile = util.promisify(fs.writeFileSync)
 
 function promptUser() {
   return inquirer.prompt([
@@ -66,7 +69,7 @@ const init = () => {
     console.log(answers);
     const readmeContents = markdown(answers);
 
-    fs.writeFileSync('../README.md', readmeContents)
+    writeToFile('../README.md', readmeContents)
   })
   .then(() => console.log('Successfully wrote to README.md'))
   .catch((err) => console.error(err));
