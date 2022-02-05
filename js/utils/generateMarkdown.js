@@ -1,7 +1,3 @@
-const fs = require('fs');
-const util = require('util')
-
-readFile = util.promisify(fs.readFileSync);
 
 
 // If there is no license, return an empty string
@@ -15,7 +11,7 @@ function renderLicenseBadge(license) {
     case 'GNU GPLv3':
       return '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
     case 'Boost 1.0':
-      return '[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)';
+      return '[![License: Boost 1.0](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)';
     case 'Unlicense':
       return '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)';
     default:
@@ -24,7 +20,6 @@ function renderLicenseBadge(license) {
 
 }
 
-// TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
 
@@ -44,19 +39,24 @@ function renderLicenseLink(license) {
   }
 }
 
-// TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
+
+
 function renderLicenseSection(license) {
 
-  fs.readFile(``)
+   return `This project is available under the MIT license. Visit ${license} for full license text`
+  
+};
 
-}
 
-// TODO: Create a function to generate markdown for README
+
+renderLicenseSection('MIT');
+
 function generateMarkdown(data) {
 
-licenseBadge = renderLicenseBadge(data.license);
-licenselink = renderLicenseLink(data.license);
+const licenseBadge = renderLicenseBadge(data.license);
+const licenselink = renderLicenseLink(data.license);
+const licenseText = renderLicenseSection(data.license);
   
   return `# ${data.title}
   ${licenseBadge}
